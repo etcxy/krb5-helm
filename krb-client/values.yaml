@@ -2,12 +2,12 @@ serviceAccount:
   create: true
 
 containers:
-  image: kuberos
+  image: easzlab.io.local:5000/kuberos
   tag: latest
   pullPolicy: IfNotPresent
 
 sidecar:
-  image: krb_sidecar
+  image: easzlab.io.local:5000/krb_sidecar
   tag: latest
   pullPolicy: IfNotPresent
 
