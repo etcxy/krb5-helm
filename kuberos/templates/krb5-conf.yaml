@@ -23,7 +23,7 @@ data:
      ticket_lifetime = {{ .Values.krb5.ticket_lifetime }}
      forwardable = {{ .Values.krb5.forwardable }}
      udp_preference_limit = 0
-     default_ccache_name = {{ .Values.krb5.default_ccache_path }}/{{ .Values.krb5.default_ccache_file }}
+     # default_ccache_name = {{ .Values.krb5.default_ccache_path }}/{{ .Values.krb5.default_ccache_file }}
      permitted_enctypes = {{ .Values.krb5.enc_types }}
 
     [realms]
