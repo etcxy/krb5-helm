@@ -1,6 +1,7 @@
-FROM centos:centos7
+FROM centos:7.5.1804
 
-RUN yum install -y krb5-workstation && \
+RUN curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo \
+&& yum install -y krb5-workstation && \
     mkdir /krb5 && chmod 755 /krb5 
 
 VOLUME ["/krb5","/dev/shm","/etc/krb5.conf.d"]
