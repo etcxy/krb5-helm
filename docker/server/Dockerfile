@@ -4,7 +4,8 @@ ARG dict_version=2.9.0-11.el7
 ARG expect_version=5.45-14.el7_1
 ARG krb5_version=1.15.1-19.el7
 
-RUN yum -y --setopt=tsflags=nodocs update \
+RUN curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo \
+ && yum -y --setopt=tsflags=nodocs update \
  && yum -y --setopt=tsflags=nodocs install \
     cracklib-dicts-${dict_version} \
     expect-${expect_version} \
@@ -25,7 +26,6 @@ RUN yum -y install \
 COPY init_db.sh /init_db
 RUN chmod a+x /init_db
 
-RUN /usr/bin/ssh-keygen -A
-
-RUN useradd iguazio
-RUN useradd krbtest
+# RUN /usr/bin/ssh-keygen -A
+# RUN useradd iguazio
+# RUN useradd krbtest
